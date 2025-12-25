@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitTrack Dashboard</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:Inter, system-ui, -apple-system, sans-serif;
+}
+
+body{
+  margin:0;
+  background:#f3f6f7;
+  padding:32px;
+}
+
+.dashboard{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:26px;
+}
+
+.left{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.stat{
+  background:#fff;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 14px 34px rgba(0,0,0,.06);
+}
+
+.stat.blue{
+  background:linear-gradient(135deg,#2f80ff,#5fa0ff);
+  color:#fff;
+}
+
+.stat-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  background:rgba(255,255,255,.25);
+}
+
+.stat.gray .stat-icon{
+  background:#f1f3f5;
+}
+
+.stat-number{
+  font-size:48px;
+  font-weight:700;
+  line-height:1;
+}
+
+.stat-label{
+  margin-top:6px;
+  font-size:14px;
+  opacity:.85;
+}
+
+.main{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+.card{
+  background:#fff;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 14px 34px rgba(0,0,0,.06);
+}
+
+.header h2{
+  margin:0 0 12px;
+  letter-spacing:-0.3px;
+}
+
+.header p{
+  margin:0;
+  color:#666;
+  line-height:1.65;
+}
+
+.content{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:26px;
+}
+
+.chart{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  height:210px;
+  padding-top:10px;
+}
+
+.day{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.bar-bg{
+  width:36px;
+  height:160px;
+  background:#ece8fb;
+  border-radius:20px;
+  position:relative;
+}
+
+.bar-purple{
+  width:100%;
+  position:absolute;
+  bottom:0;
+  background:linear-gradient(180deg,#8b5cf6,#6d28d9);
+  border-radius:20px;
+}
+
+.bar-blue{
+  width:100%;
+  position:absolute;
+  bottom:0;
+  background:linear-gradient(180deg,#60a5fa,#2563eb);
+  border-radius:20px;
+}
+
+.small{
+  font-size:12px;
+  color:#666;
+}
+
+.log{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.log-item{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ddd,#bbb);
+}
+
+.bottom{
+  display:flex;
+  gap:26px;
+  align-items:center;
+}
+
+.doc-icon{
+  width:94px;
+  height:94px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#f2e9ff,#e3d5ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+}
+
+a{
+  color:#2563eb;
+  font-weight:600;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="left">
+    <div class="stat blue">
+      <div class="stat-icon">🔥</div>
+      <div class="stat-number">342</div>
+      <div class="stat-label">Calories burned</div>
+    </div>
+
+    <div class="stat gray">
+      <div class="stat-icon">🏃</div>
+      <div class="stat-number">7197</div>
+      <div class="stat-label">Steps today</div>
+    </div>
+
+    <div class="stat gray">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-number">87%</div>
+      <div class="stat-label">Weekly goal</div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="card header">
+      <h2>Your 30-day performance overview</h2>
+      <p>
+        FitTrack AI analyzes your workouts, recovery patterns, and daily activity.
+        Based on your data, we generate personalized insights to help you reach your
+        goals faster. Below is a summary of your key performance metrics over the past month.
+      </p>
+    </div>
+
+    <div class="content">
+
+      <div class="card">
+        <h3>Training load progression</h3>
+
+        <div class="chart">
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:92%"></div><div class="bar-blue" style="height:42%"></div></div><div class="small">Mon</div></div>
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:72%"></div><div class="bar-blue" style="height:47%"></div></div><div class="small">Tue</div></div>
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:52%"></div><div class="bar-blue" style="height:32%"></div></div><div class="small">Wed</div></div>
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:78%"></div><div class="bar-blue" style="height:52%"></div></div><div class="small">Thu</div></div>
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:38%"></div><div class="bar-blue" style="height:22%"></div></div><div class="small">Fri</div></div>
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:96%"></div><div class="bar-blue" style="height:66%"></div></div><div class="small">Sat</div></div>
+          <div class="day"><div class="bar-bg"><div class="bar-purple" style="height:100%"></div><div class="bar-blue" style="height:82%"></div></div><div class="small">Sun</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Activity log</h3>
+
+        <div class="log">
+          <div class="log-item"><div class="avatar"></div><div><b>Alex</b><br><small>Set a new personal record</small></div></div>
+          <div class="log-item"><div class="avatar"></div><div><b>Alisa</b><br><small>Completed upper-body session</small></div></div>
+          <div class="log-item"><div class="avatar"></div><div><b>Marco</b><br><small>Activity above average today</small></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card bottom">
+      <div class="doc-icon">📄</div>
+      <div>
+        <h3>Your new personalized workout is ready</h3>
+        <p>
+          Based on your recent activity and training intensity, FitTrack AI has generated
+          a customized workout plan. Open it now to keep moving toward your goals.
+        </p>
+        <a href="#">View details →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
